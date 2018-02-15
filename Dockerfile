@@ -1,9 +1,11 @@
-FROM ubuntu:latest
+FROM      ubuntu:latest
 
-RUN mkdir /usr/src/app
-WORKDIR /usr/src/app
-RUN apk add --update python make gcc g++ git curl bash
+RUN       echo "please edit the Dockerfile with token and app before you use this" ; exit 1
 
-COPY . .
+RUN       apt-get -y update && \
+          apt-get install -y curl python-pip && \
+          mkdir -p /home/app
 
-CMD ["printenv"]
+ADD      vulnerable_app  /home/app/
+
+WORKDIR   /home/app
