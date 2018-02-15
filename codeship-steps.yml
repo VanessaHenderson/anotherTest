@@ -1,7 +1,8 @@
 - type: parallel
   name: example_parallel_step
   steps:
-    - service: Sourceclear
+    - name: sourceclear
+      service: codeship_example
       command: curl -sSL https://download.sourceclear.com/ci.sh | bash
 - name: example_tagged_step
   tag: master
