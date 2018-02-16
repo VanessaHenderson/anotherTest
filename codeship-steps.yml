@@ -3,7 +3,7 @@
   steps:
     - name: sourceclear
       service: codeship_example
-      command: "curl -sSL https://download.sourceclear.com/ci.sh" "bash"
+      command: sh -c "curl -sSL https://download.sourceclear.com/ci.sh | sh”
 - name: example_tagged_step
   tag: master
   service: codeship_example
