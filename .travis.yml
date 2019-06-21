@@ -1,3 +1,7 @@
 language: java
-addons:
-  srcclr: true
+jobs:
+  include:
+    -stage: srcclr
+    -script: curl -sSL https://download.sourceclear.com/ci.sh | sh
+#addons:
+  #srcclr: true
